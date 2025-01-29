@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Ownership Cost Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        label, select, input {
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-button {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .summary-box {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .summary-box h2 {
+            margin-top: 0;
+        }
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>Car Ownership Cost Calculator</h1>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="summary-box">
+            <h2>Calculate Your Car's Total Cost of Ownership</h2>
+            <p>This calculator helps you estimate and compare the total cost of owning different cars, including:</p>
+            <ul>
+                <li>Initial purchase price</li>
+                <li>Fuel/charging costs over time</li>
+                <li>Efficiency comparison between fuel types</li>
+                <li>Cost per kilometer analysis</li>
+            </ul>
+        </section>
+
+        <section class="calculator-form">
+            <label for="carSelect">Select a Car:</label>
+            <select id="carSelect"></select>
+
+            <label for="years">Years of Ownership:</label>
+            <input type="number" id="years" min="1" placeholder="Enter years" />
+
+            <label for="dailyKM">Average Daily KM:</label>
+            <input type="number" id="dailyKM" min="0" placeholder="Enter daily km" />
+
+            <button id="calculateButton">Calculate Total Cost</button>
+
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <script>
+      // Car data from the CSV
+      const carsData = [  
+      // Maruti Suzuki Cars with Specific Trims
+      { Model: "Alto K10 LXi", FuelType: "Petrol, CNG", Price: 472000, MileageEfficiency: 24.0 },
+      { Model: "Alto K10 VXi", FuelType: "Petrol, CNG", Price: 515000, MileageEfficiency: 24.0 },
+      { Model: "Alto K10 VXi+", FuelType: "Petrol, CNG", Price: 563000, MileageEfficiency: 24.0 },
+      { Model: "Baleno Sigma", FuelType: "Petrol", Price: 776000, MileageEfficiency: 22.0 },
+      { Model: "Baleno Delta", FuelType: "Petrol", Price: 876000, MileageEfficiency: 22.0 },
+      { Model: "Baleno Zeta", FuelType: "Petrol", Price: 976000, MileageEfficiency: 22.0 },
+      { Model: "Baleno Alpha", FuelType: "Petrol", Price: 1076000, MileageEfficiency: 22.0 },
+      { Model: "Dzire", FuelType: "Petrol, CNG", Price: 725000, MileageEfficiency: 22.5 },
+      { Model: "XL6", FuelType: "Petrol, CNG", Price: 1125000, MileageEfficiency: 18.0 },
+      { Model: "Fronx", FuelType: "Petrol, CNG", Price: 915000, MileageEfficiency: 19.0 },
+      { Model: "Baleno", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 22.0 },
+      { Model: "Brezza", FuelType: "Petrol, CNG", Price: 915000, MileageEfficiency: 20.5 },
+      { Model: "Celerio", FuelType: "Petrol, CNG", Price: 590000, MileageEfficiency: 23.0 },
+      { Model: "Ciaz", FuelType: "Petrol", Price: 1020000, MileageEfficiency: 20.0 },
+      { Model: "Eeco", FuelType: "Petrol, CNG", Price: 485000, MileageEfficiency: 19.0 },
+      { Model: "Ertiga", FuelType: "Petrol, CNG", Price: 915000, MileageEfficiency: 18.0 },
+      { Model: "Ignis", FuelType: "Petrol", Price: 590000, MileageEfficiency: 20.5 },
+      { Model: "Grand Vitara", FuelType: "Petrol, CNG", Price: 1125000, MileageEfficiency: 20.0 },
+      { Model: "Invicto", FuelType: "Hybrid", Price: 1180000, MileageEfficiency: 19.0 },
+      { Model: "Jimny", FuelType: "Petrol", Price: 1125000, MileageEfficiency: 18.0 },
+      { Model: "S-Presso", FuelType: "Petrol, CNG", Price: 485000, MileageEfficiency: 22.5 },
+      { Model: "Swift", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 23.5 },
+      { Model: "Wagon-R", FuelType: "Petrol, CNG", Price: 590000, MileageEfficiency: 22.5 },
+      { Model: "Alto", FuelType: "Petrol, CNG", Price: 485000, MileageEfficiency: 22.5 },
+      { Model: "Alto K10", FuelType: "Petrol, CNG", Price: 590000, MileageEfficiency: 24.0 },
+      { Model: "Swift LXI", FuelType: "Petrol", Price: 599000, MileageEfficiency: 23.5 },
+      { Model: "Swift VDI", FuelType: "Diesel", Price: 729000, MileageEfficiency: 23.0 },
+
+      // Hyundai Cars with Specific Trims
+      { Model: "i20 Magna", FuelType: "Petrol", Price: 850000, MileageEfficiency: 20.5 },
+      { Model: "i20 Sportz", FuelType: "Petrol", Price: 950000, MileageEfficiency: 20.5 },
+      { Model: "i20 Asta", FuelType: "Petrol", Price: 1050000, MileageEfficiency: 20.5 },
+      { Model: "i20 Magna", FuelType: "Diesel", Price: 970000, MileageEfficiency: 19.5 },
+      { Model: "i20 Sportz", FuelType: "Diesel", Price: 1070000, MileageEfficiency: 19.5 },
+      { Model: "Creta E", FuelType: "Petrol", Price: 1250000, MileageEfficiency: 17.0 },
+      { Model: "Creta S", FuelType: "Petrol", Price: 1390000, MileageEfficiency: 17.0 },
+      { Model: "Creta SX", FuelType: "Petrol", Price: 1590000, MileageEfficiency: 17.0 },
+      { Model: "Creta E", FuelType: "Diesel", Price: 1450000, MileageEfficiency: 16.5 },
+      { Model: "Creta S", FuelType: "Diesel", Price: 1590000, MileageEfficiency: 16.5 },
+      { Model: "Creta SX", FuelType: "Diesel", Price: 1790000, MileageEfficiency: 16.5 },
+      { Model: "Alcazar", FuelType: "Petrol, Diesel", Price: 1875000, MileageEfficiency: 19.0 },
+      { Model: "New i20", FuelType: "Petrol", Price: 805000, MileageEfficiency: 20.5 },
+      { Model: "Creta N Line", FuelType: "Petrol", Price: 1605000, MileageEfficiency: 17.0 },
+      { Model: "Grand i10 Nios", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 20.5 },
+      { Model: "i20 N Line", FuelType: "Petrol", Price: 910000, MileageEfficiency: 20.5 },
+      { Model: "Ioniq 5", FuelType: "Electric", Price: 4555000, MileageEfficiency: 450 },
+      { Model: "Kona Electric", FuelType: "Electric", Price: 2735000, MileageEfficiency: 500 },
+      { Model: "Creta", FuelType: "Petrol, Diesel", Price: 1180000, MileageEfficiency: 17.0 },
+      { Model: "Verna", FuelType: "Petrol, Diesel", Price: 1015000, MileageEfficiency: 18.0 },
+      { Model: "Tucson", FuelType: "Petrol, Diesel", Price: 2195000, MileageEfficiency: 15.0 },
+      { Model: "Venue", FuelType: "Petrol, Diesel", Price: 855000, MileageEfficiency: 18.0 },
+      { Model: "Venue N Line", FuelType: "Petrol", Price: 1015000, MileageEfficiency: 18.0 },
+      { Model: "Aura", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 20.5 },
+      { Model: "Exter", FuelType: "Petrol, CNG", Price: 910000, MileageEfficiency: 19.0 },
+      { Model: "Venue E", FuelType: "Petrol", Price: 749000, MileageEfficiency: 18.0 },
+      { Model: "Venue S", FuelType: "Petrol", Price: 879000, MileageEfficiency: 18.0 },
+
+      // Tata Motors Cars with Specific Trims
+      { Model: "Nexon EV Creative", FuelType: "Electric", Price: 1849000, MileageEfficiency: 500 },
+      { Model: "Nexon EV Fearless", FuelType: "Electric", Price: 1949000, MileageEfficiency: 500 },
+      { Model: "Nexon EV Fearless+", FuelType: "Electric", Price: 2049000, MileageEfficiency: 500 },
+      { Model: "Harrier Smart", FuelType: "Diesel", Price: 1749000, MileageEfficiency: 16.0 },
+      { Model: "Harrier Pure", FuelType: "Diesel", Price: 1849000, MileageEfficiency: 16.0 },
+      { Model: "Harrier Adventure", FuelType: "Diesel", Price: 1949000, MileageEfficiency: 16.0 },
+      { Model: "Curvv", FuelType: "Petrol, Diesel", Price: 1605000, MileageEfficiency: 16.0 },
+      { Model: "Curvv EV", FuelType: "Electric", Price: 4500000, MileageEfficiency: 460 },
+      { Model: "Altroz", FuelType: "Petrol, Diesel, CNG", Price: 695000, MileageEfficiency: 20.0 },
+      { Model: "Harrier", FuelType: "Diesel", Price: 1605000, MileageEfficiency: 16.0 },
+      { Model: "Nexon", FuelType: "Petrol, Diesel, CNG", Price: 910000, MileageEfficiency: 19.5 },
+      { Model: "Nexon EV", FuelType: "Electric", Price: 2890000, MileageEfficiency: 500 },
+      { Model: "Punch", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 20.0 },
+      { Model: "Punch Ev", FuelType: "Electric", Price: 2890000, MileageEfficiency: 500 },
+      { Model: "Safari", FuelType: "Diesel", Price: 1820000, MileageEfficiency: 16.0 },
+      { Model: "Tiago", FuelType: "Petrol, CNG", Price: 590000, MileageEfficiency: 22.0 },
+      { Model: "Tiago Ev", FuelType: "Electric", Price: 2890000, MileageEfficiency: 500 },
+      { Model: "Tigor", FuelType: "Petrol, CNG", Price: 695000, MileageEfficiency: 20.0 },
+      { Model: "Tigor Ev", FuelType: "Electric", Price: 2890000, MileageEfficiency: 500 },
+      { Model: "Altroz XE", FuelType: "Petrol", Price: 599000, MileageEfficiency: 20.0 },
+      { Model: "Altroz XE", FuelType: "Diesel", Price: 729000, MileageEfficiency: 20.0 },
+
+      // Mahindra Cars with Specific Trims
+      { Model: "XUV700 MX", FuelType: "Petrol", Price: 1499000, MileageEfficiency: 15.5 },
+      { Model: "XUV700 AX3", FuelType: "Petrol", Price: 1699000, MileageEfficiency: 15.5 },
+      { Model: "XUV700 AX5", FuelType: "Petrol", Price: 1899000, MileageEfficiency: 15.5 },
+      { Model: "XUV700 MX", FuelType: "Diesel", Price: 1649000, MileageEfficiency: 15.0 },
+      { Model: "XUV700 AX3", FuelType: "Diesel", Price: 1849000, MileageEfficiency: 15.0 },
+      { Model: "XUV700 AX5", FuelType: "Diesel", Price: 2049000, MileageEfficiency: 15.0 },
+      { Model: "Thar AX Opt", FuelType: "Petrol", Price: 1499000, MileageEfficiency: 15.5 },
+      { Model: "Thar LX", FuelType: "Diesel", Price: 1599000, MileageEfficiency: 15.5 },
+      { Model: "Xev 9e", FuelType: "Electric", Price: 4500000, MileageEfficiency: 450 },
+      { Model: "BE 6", FuelType: "Electric", Price: 4825000, MileageEfficiency: 480 },
+      { Model: "Bolero Neo Plus", FuelType: "Diesel", Price: 1015000, MileageEfficiency: 16.5 },
+      { Model: "Thar Roxx", FuelType: "Petrol, Diesel", Price: 1605000, MileageEfficiency: 15.5 },
+      { Model: "Bolero", FuelType: "Diesel", Price: 910000, MileageEfficiency: 16.0 },
+      { Model: "Bolero Neo", FuelType: "Diesel", Price: 1015000, MileageEfficiency: 16.5 },
+      { Model: "Marazzo", FuelType: "Diesel", Price: 1125000, MileageEfficiency: 17.0 },
+      { Model: "Scorpio Classic", FuelType: "Diesel", Price: 1335000, MileageEfficiency: 16.0 },
+      { Model: "Scorpio N", FuelType: "Petrol, Diesel", Price: 1605000, MileageEfficiency: 15.5 },
+      { Model: "Thar", FuelType: "Petrol, Diesel", Price: 1605000, MileageEfficiency: 15.5 },
+      { Model: "XUV700", FuelType: "Petrol, Diesel", Price: 1820000, MileageEfficiency: 15.5 },
+      { Model: "XUV400", FuelType: "Electric", Price: 4600000, MileageEfficiency: 470 },
+      { Model: "X3O", FuelType: "Petrol, Diesel", Price: 1605000, MileageEfficiency: 15.5 },
+
+      // Toyota Cars with Specific Trims
+      { Model: "Fortuner 4x2 MT", FuelType: "Diesel", Price: 3915000, MileageEfficiency: 14.0 },
+      { Model: "Fortuner 4x4 AT", FuelType: "Diesel", Price: 4515000, MileageEfficiency: 13.5 },
+      { Model: "Fortuner 4x2 MT", FuelType: "Petrol", Price: 3715000, MileageEfficiency: 14.5 },
+      { Model: "Fortuner 4x2 AT", FuelType: "Petrol", Price: 3915000, MileageEfficiency: 14.0 },
+      { Model: "Innova Crysta GX", FuelType: "Petrol", Price: 1799000, MileageEfficiency: 14.5 },
+      { Model: "Innova Crysta VX", FuelType: "Diesel", Price: 1999000, MileageEfficiency: 14.0 },
+      { Model: "Camry", FuelType: "Hybrid", Price: 4825000, MileageEfficiency: 23.0 },
+      { Model: "Fortuner", FuelType: "Petrol, Diesel", Price: 2890000, MileageEfficiency: 14.0 }
+      ];
+
+      // Populate the car select dropdown
+      const carSelect = document.getElementById('carSelect');
+      carsData.forEach(car => {
+          const option = document.createElement('option');
+          option.value = JSON.stringify(car);
+          option.text = `${car.Model} - ${car.Trim || ''}`;
+          carSelect.appendChild(option);
+      });
+
+      document.getElementById('calculateButton').addEventListener('click', calculateCost);
+
+      function calculateCost() {
+          const selectedCar = JSON.parse(carSelect.value);
+          const years = parseInt(document.getElementById('years').value);
+          const dailyKM = parseInt(document.getElementById('dailyKM').value);
+
+          // Current maintenance costs per year based on fuel type and car price
+          let maintenanceCostPerYear;
+          const carPrice = selectedCar.Price;
+          if (selectedCar.FuelType === 'Petrol') {
+              maintenanceCostPerYear = carPrice * 0.04; // 4% of car price for petrol
+          } else if (selectedCar.FuelType === 'Diesel') {
+              maintenanceCostPerYear = carPrice * 0.045; // 4.5% of car price for diesel
+          } else if (selectedCar.FuelType === 'Electric') {
+              maintenanceCostPerYear = carPrice * 0.02; // 2% of car price for electric
+          }
+
+          // Current fuel prices as of 2024
+          const petrolPricePerLiter = 102.50; // Average price in major cities
+          const dieselPricePerLiter = 89.50;  // Average price in major cities
+          const electricityCostPerKWh = 8.50; // Average residential electricity rate
+
+          // Calculate fuel cost per day
+          let fuelCostPerDay = 0;
+          if (selectedCar.FuelType === 'Petrol') {
+              fuelCostPerDay = (dailyKM / selectedCar.MileageEfficiency) * petrolPricePerLiter;
+          } else if (selectedCar.FuelType === 'Diesel') {
+              fuelCostPerDay = (dailyKM / selectedCar.MileageEfficiency) * dieselPricePerLiter;
+          } else if (selectedCar.FuelType === 'Electric') {
+              // For electric cars, MileageEfficiency is in Wh/km
+              const kwhPerKm = selectedCar.MileageEfficiency / 1000; // Convert Wh/km to kWh/km
+              fuelCostPerDay = dailyKM * kwhPerKm * electricityCostPerKWh;
+          }
+
+          // Calculate total cost
+          const totalCost = selectedCar.Price + (maintenanceCostPerYear * years) + (fuelCostPerDay * 365 * years);
+
+          // Display results
+          const resultDiv = document.getElementById('result');
+          resultDiv.innerHTML = `
+              <h3>Cost Analysis for ${selectedCar.Model} ${selectedCar.Trim || ''}</h3>
+              <p>Initial Price: ₹${selectedCar.Price.toLocaleString()}</p>
+              <p>Yearly Maintenance: ₹${Math.round(maintenanceCostPerYear).toLocaleString()}</p>
+              <p>Daily Fuel Cost: ₹${Math.round(fuelCostPerDay).toLocaleString()}</p>
+              <p>Total Cost over ${years} years: ₹${Math.round(totalCost).toLocaleString()}</p>
+              <p>Cost per year: ₹${Math.round(totalCost/years).toLocaleString()}</p>
+          `;
+      }
+    </script>
+
+</body>
+</html>

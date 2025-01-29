@@ -1,0 +1,195 @@
+Model,Fuel Type,Trim,Price,MileageOrEfficiency
+Maruti Suzuki Alto,Petrol,Std,300000,22
+Maruti Suzuki Alto,Petrol,LXI,350000,22
+Maruti Suzuki Swift,Petrol,LXI,500000,22 kmpl
+Hyundai i20,Petrol,Magna,750000,17 kmpl
+Honda City,Petrol,VX,1100000,16 kmpl
+Tata Nexon,Petrol,XE,850000,16 kmpl
+Tata Altroz,Diesel,XE,800000,20 kmpl
+Hyundai Verna,Diesel,SX,1050000,22 kmpl
+Mahindra XUV500,Diesel,W5,1500000,18 kmpl
+Kia Seltos,Petrol,HTE,1099000,17.4 kmpl
+Kia Seltos,Diesel,HTK Plus,1299000,21 kmpl
+MG Hector,Petrol,Style,1348000,14.16 kmpl
+MG Hector,Diesel,Style,1398000,17.41 kmpl
+Tata Harrier,Petrol,XE,1449000,14.18 kmpl
+Tata Harrier,Diesel,XE,1499000,16.35 kmpl
+Mahindra Scorpio-N,Petrol,Z2,1349000,18.5 kmpl
+Mahindra Scorpio-N,Diesel,Z2,1399000,18.5 kmpl
+Mahindra XUV700,Petrol,MX,1399000,18 kmpl
+Mahindra XUV700,Diesel,MX,1449000,18 kmpl
+Toyota Fortuner,Diesel,4x2 MT,3343000,14.22 kmpl
+Toyota Fortuner,Diesel,4x4 AT,4506000,12.9 kmpl
+Hyundai Creta,Petrol,E,1100000,17.2 kmpl
+Hyundai Creta,Diesel,E,1150000,21.4 kmpl
+Kia Seltos,Petrol,HTE,1099000,17.4 kmpl
+Kia Seltos,Diesel,HTK Plus,1299000,21 kmpl
+MG Hector,Petrol,Style,1348000,14.16 kmpl
+MG Hector,Diesel,Style,1398000,17.41 kmpl
+Tata Nexon EV,Electric,XM,1400000,312 km/charge
+MG ZS EV,Electric,Excite,2000000,340 km/charge
+Hyundai Kona Electric,Electric,Premium,2300000,452 km/charge
+Tata Tiago EV,Electric,XE,800000,142 km/charge
+Mahindra e2o,Electric,P2,550000,140 km/charge
+Mahindra e2o,Electric,P4,600000,140 km/charge
+Mahindra e2o,Electric,P6,650000,140 km/charge
+Mahindra e-Verito,Electric,D2,950000,181 km/charge
+Mahindra e-Verito,Electric,D4,1000000,181 km/charge
+Mahindra e-Verito,Electric,D6,1050000,181 km/charge
+BYD e6,Electric,GL,2900000,400 km/charge
+BYD e6,Electric,GLX,3100000,400 km/charge
+Audi e-tron,Electric,50,11000000,484 km/charge
+Audi e-tron,Electric,55,11500000,484 km/charge
+Audi e-tron,Electric,55 Sportback,12000000,484 km/charge
+Jaguar I-PACE,Electric,S,10500000,470 km/charge
+Jaguar I-PACE,Electric,SE,11000000,470 km/charge
+Jaguar I-PACE,Electric,HSE,11500000,470 km/charge
+Mercedes-Benz EQC,Electric,400,9990000,471 km/charge
+Mercedes-Benz EQC,Electric,400 4MATIC,10400000,471 km/charge
+Renault Kwid,Petrol,RXE,260000,25.20 kmpl
+Renault Kwid,Petrol,RXL,310000,25.20 kmpl
+Renault Kwid,Petrol,RXT,360000,25.20 kmpl
+Renault Kwid,Petrol,Climber,410000,25.20 kmpl
+Renault Duster,Petrol,RXE,800000,19.80 kmpl
+Renault Duster,Petrol,RXL,850000,19.80 kmpl
+Renault Duster,Petrol,RXT,900000,19.80 kmpl
+Renault Duster,Petrol,RXZ,950000,19.80 kmpl
+Nissan Micra,Petrol,XL,460000,23.20 kmpl
+Nissan Micra,Petrol,XV,510000,23.20 kmpl
+Nissan Micra,Petrol,XV Premium,560000,23.20 kmpl
+Nissan Sunny,Petrol,XL,690000,22.70 kmpl
+Nissan Sunny,Petrol,XV,740000,22.70 kmpl
+Nissan Sunny,Petrol,XV Premium,790000,22.70 kmpl
+Nissan Terrano,Diesel,XL,950000,19.80 kmpl
+Nissan Terrano,Diesel,XV,1000000,19.80 kmpl
+Nissan Terrano,Diesel,XV Premium,1050000,19.80 kmpl
+Datsun Go,Petrol,D,380000,22.50 kmpl
+Datsun Go,Petrol,D1,430000,22.50 kmpl
+Datsun Go,Petrol,T,480000,22.50 kmpl
+Datsun Go,Petrol,T(O),530000,22.50 kmpl
+Datsun Go+,Petrol,D,420000,22.50 kmpl
+Datsun Go+,Petrol,D1,470000,22.50 kmpl
+Datsun Go+,Petrol,T,520000,22.50 kmpl
+Datsun Go+,Petrol,T(O),570000,22.50 kmpl
+Datsun Redi-Go,Petrol,D,280000,25.20 kmpl
+Datsun Redi-Go,Petrol,A,330000,25.20 kmpl
+Datsun Redi-Go,Petrol,T,380000,25.20 kmpl
+Datsun Redi-Go,Petrol,T(O),430000,25.20 kmpl
+Fiat Punto Evo,Petrol,Active,490000,20.50 kmpl
+Fiat Punto Evo,Petrol,Dynamic,540000,20.50 kmpl
+Fiat Punto Evo,Petrol,Emotion,590000,20.50 kmpl
+Fiat Linea,Petrol,Active,720000,20.40 kmpl
+Fiat Linea,Petrol,Dynamic,770000,20.40 kmpl
+Fiat Linea,Petrol,Emotion,820000,20.40 kmpl
+Fiat Avventura,Petrol,Active,690000,20.50 kmpl
+Fiat Avventura,Petrol,Dynamic,740000,20.50 kmpl
+Fiat Avventura,Petrol,Emotion,790000,20.50 kmpl
+Jeep Compass,Diesel,Sport,1550000,17.10 kmpl
+Jeep Compass,Diesel,Longitude,1650000,17.10 kmpl
+Jeep Compass,Diesel,Limited,1750000,17.10 kmpl
+Jeep Wrangler,Petrol,Sport,5600000,12.10 kmpl
+Jeep Wrangler,Petrol,Sahara,6000000,12.10 kmpl
+Jeep Wrangler,Petrol,Rubicon,6400000,12.10 kmpl
+Land Rover Discovery Sport,Diesel,S,4400000,14.30 kmpl
+Land Rover Discovery Sport,Diesel,SE,4600000,14.30 kmpl
+Land Rover Discovery Sport,Diesel,HSE,4800000,14.30 kmpl
+Land Rover Discovery Sport,Diesel,HSE Luxury,5000000,14.30 kmpl
+Land Rover Range Rover Evoque,Diesel,S,5200000,14.30 kmpl
+Land Rover Range Rover Evoque,Diesel,SE,5400000,14.30 kmpl
+Land Rover Range Rover Evoque,Diesel,HSE,5600000,14.30 kmpl
+Land Rover Range Rover Evoque,Diesel,HSE Dynamic,5800000,14.30 kmpl
+Land Rover Range Rover Velar,Diesel,S,7200000,13.40 kmpl
+Land Rover Range Rover Velar,Diesel,SE,7400000,13.40 kmpl
+Land Rover Range Rover Velar,Diesel,HSE,7600000,13.40 kmpl
+Land Rover Range Rover Velar,Diesel,HSE Dynamic,7800000,13.40 kmpl
+Land Rover Range Rover Sport,Diesel,S,9900000,12.80 kmpl
+Land Rover Range Rover Sport,Diesel,SE,10200000,12.80 kmpl
+Land Rover Range Rover Sport,Diesel,HSE,10500000,12.80 kmpl
+Land Rover Range Rover Sport,Diesel,HSE Dynamic,10800000,12.80 kmpl
+Land Rover Range Rover,Diesel,Vogue,17300000,12.40 kmpl
+Land Rover Range Rover,Diesel,Vogue SE,17800000,12.40 kmpl
+Land Rover Range Rover,Diesel,Autobiography,18300000,12.40 kmpl
+Land Rover Range Rover,Diesel,SVAutobiography,19300000,12.40 kmpl
+Jaguar XE,Petrol,Pure,4060000,20.60 kmpl
+Jaguar XE,Petrol,Prestige,4360000,20.60 kmpl
+Jaguar XE,Petrol,Portfolio,4660000,20.60 kmpl
+Jaguar XF,Petrol,Pure,4950000,19.30 kmpl
+Jaguar XF,Petrol,Prestige,5250000,19.30 kmpl
+Jaguar XF,Petrol,Portfolio,5550000,19.30 kmpl
+Jaguar XJ,Petrol,Premium Luxury,9900000,17.40 kmpl
+Jaguar XJ,Petrol,Portfolio,10200000,17.40 kmpl
+Jaguar F-Pace,Petrol,Pure,6000000,18.40 kmpl
+Jaguar F-Pace,Petrol,Prestige,6300000,18.40 kmpl
+Jaguar F-Pace,Petrol,Portfolio,6600000,18.40 kmpl
+Audi A3,Petrol,Premium,3310000,20.60 kmpl
+Audi A3,Petrol,Premium Plus,3510000,20.60 kmpl
+Audi A3,Petrol,Technology,3710000,20.60 kmpl
+Audi A4,Petrol,Premium,4120000,20.60 kmpl
+Audi A4,Petrol,Premium Plus,4320000,20.60 kmpl
+Audi A4,Petrol,Technology,4520000,20.60 kmpl
+Audi A6,Petrol,Premium,5420000,18.50 kmpl
+Audi A6,Petrol,Premium Plus,5620000,18.50 kmpl
+Audi A6,Petrol,Technology,5820000,18.50 kmpl
+Audi A8,Petrol,50 TFSI,15600000,16.40 kmpl
+Audi A8,Petrol,55 TFSI,16300000,16.40 kmpl
+Audi Q3,Petrol,Premium,3470000,18.50 kmpl
+Audi Q3,Petrol,Premium Plus,3670000,18.50 kmpl
+Audi Q3,Petrol,Technology,3870000,18.50 kmpl
+Audi Q5,Petrol,Premium,5320000,17.40 kmpl
+Audi Q5,Petrol,Premium Plus,5520000,17.40 kmpl
+Audi Q5,Petrol,Technology,5720000,17.40 kmpl
+Audi Q7,Diesel,Premium,6920000,14.80 kmpl
+Audi Q7,Diesel,Premium Plus,7120000,14.80 kmpl
+Audi Q7,Diesel,Technology,7320000,14.80 kmpl
+BMW 3 Series,Petrol,Sport,4140000,20.60 kmpl
+BMW 3 Series,Petrol,Luxury Line,4340000,20.60 kmpl
+BMW 3 Series,Petrol,M Sport,4540000,20.60 kmpl
+BMW 5 Series,Petrol,Sport,5290000,19.30 kmpl
+BMW 5 Series,Petrol,Luxury Line,5490000,19.30 kmpl
+BMW 5 Series,Petrol,M Sport,5690000,19.30 kmpl
+BMW 7 Series,Diesel,730Ld,12200000,17.40 kmpl
+BMW 7 Series,Diesel,740Li,13500000,17.40 kmpl
+BMW 7 Series,Diesel,750Li,15300000,17.40 kmpl
+BMW X1,Petrol,sDrive20i,3520000,18.40 kmpl
+BMW X1,Diesel,xDrive20d,3720000,18.40 kmpl
+BMW X3,Diesel,xDrive20d,5620000,17.40 kmpl
+BMW X3,Petrol,xDrive30i,5820000,17.40 kmpl
+BMW X5,Diesel,xDrive30d,7290000,15.40 kmpl
+BMW X5,Petrol,xDrive40i,7490000,15.40 kmpl
+Mercedes-Benz C-Class,Petrol,C 200,4010000,20.60 kmpl
+Mercedes-Benz C-Class,Diesel,C 220d,4210000,20.60 kmpl
+Mercedes-Benz C-Class,Diesel,C 300d,4410000,20.60 kmpl
+Mercedes-Benz E-Class,Petrol,E 200,5220000,18.50 kmpl
+Mercedes-Benz E-Class,Diesel,E 220d,5420000,18.50 kmpl
+Mercedes-Benz E-Class,Diesel,E 350d,5620000,18.50 kmpl
+Mercedes-Benz S-Class,Diesel,S 350d,13300000,17.40 kmpl
+Mercedes-Benz S-Class,Petrol,S 450,14300000,17.40 kmpl
+Mercedes-Benz S-Class,Petrol,S 650 Maybach,27300000,17.40 kmpl
+Mercedes-Benz GLA,Petrol,200,3220000,18.40 kmpl
+Mercedes-Benz GLA,Diesel,220d,3420000,18.40 kmpl
+Mercedes-Benz GLC,Petrol,200,5220000,17.40 kmpl
+Mercedes-Benz GLC,Diesel,220d,5420000,17.40 kmpl
+Mercedes-Benz GLC,Petrol,300,5620000,17.40 kmpl
+Mercedes-Benz GLE,Diesel,300d,7320000,15.40 kmpl
+Mercedes-Benz GLE,Diesel,400d,7520000,15.40 kmpl
+Mercedes-Benz GLE,Petrol,450,7720000,15.40 kmpl
+Mercedes-Benz GLS,Diesel,400d,8520000,14.80 kmpl
+Mercedes-Benz GLS,Petrol,580,8720000,14.80 kmpl
+Volvo XC40,Petrol,Momentum,3990000,18.40 kmpl
+Volvo XC40,Petrol,Inscription,4290000,18.40 kmpl
+Volvo XC40,Petrol,R-Design,4490000,18.40 kmpl
+Volvo XC60,Diesel,Momentum,5290000,17.40 kmpl
+Volvo XC60,Diesel,Inscription,5590000,17.40 kmpl
+Volvo XC60,Diesel,R-Design,5790000,17.40 kmpl
+Volvo XC90,Diesel,Momentum,8090000,15.40 kmpl
+Volvo XC90,Diesel,Inscription,8390000,15.40 kmpl
+Volvo XC90,Diesel,R-Design,8590000,15.40 kmpl
+Volvo S60,Petrol,Momentum,3850000,20.60 kmpl
+Volvo S60,Petrol,Inscription,4150000,20.60 kmpl
+Volvo S60,Petrol,R-Design,4350000,20.60 kmpl
+Volvo S90,Diesel,Momentum,5190000,18.50 kmpl
+Volvo S90,Diesel,Inscription,5490000,18.50 kmpl
+Volvo S90,Diesel,R-Design,5690000,18.50 kmpl
+Tata Nexon EV,Electric,XM,1400000,312 km/charge
+Tata Nexon EV,Electric,XZ+,1500000,312 km/charge
+Tata Nexon EV,Electric,XZ+ Lux,1550000,312 km/charge

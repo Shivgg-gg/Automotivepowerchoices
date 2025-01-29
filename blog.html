@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Car Blog</h1>
+        <p>Car Reviews and Experiences</p>
+        <a href="index.html" class="btn btn-light">Back to Home</a>
+    </header>
+
+    <!-- Blog Posts -->
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div id="blogPosts">
+                    <!-- Blog posts will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5">
+        <p>&copy; 2024 Car Blog</p>
+    </footer>
+
+    <script>
+        // Add your blog posts here
+        const blogPosts = [
+
+        {
+                title: "Review on the BMW I7(Electric)",
+                date: "January 8, 2025",
+                content: `The BMW I7, BMW’s most high-end electric and luxury car that is taken over by technology is also something that is new and different that has entered the market. It is an electric car which is powered by a 101.7 kW battery pack that produces 536.40 hp and with a claimed range of 625 kms. The reason why it is on the expensive side is because firstly it is a BMW, secondly it offers mind boggling features like, one pedal driving, level 3 ADAS and many more safety features as well. It is also on an electric platform which shoots up the price. The futuristic feeling is also there when you change the drive modes. When you change the drive modes in the car, it also changes the displays of the driver and the cockpit. It also does get a TV behind so the passenger can watch TV while getting a massage on the massage seats. Overall, the BMW I7 is a car which is built seeing the future and if your a person who likes thinking in the future then the BMW I7 is something for you. `
+                
+            },
+        {
+                title: "Review on the Skoda Kodiaq L&K(Petrol) ",
+                date: "January 10, 2025",
+                content: "Skoda, one of the world's most leading brands in cars that people are commonly buying nowadays. It is a German company which was founded in the year 1895 by Laurin & Klement. Skoda has produced many cars since then but let us talk about the Kodiaq which is a full size 7-seater SUV, a perfect family car and a perfect road trip car as well. It indeed is a very comfortable and a safe car in terms of road trips and is a great family car. If we see in terms of safety it is an impressive 5-star safety rating in Euro NCAP crash tests. The overall AOP score stands at 92%, signifying outstanding safety for both the driver and front passenger, especially in head-on collisions. Fuel economy is a little on the lower side as it comes with a 2.0litrePetrol engine which puts out a good 192hp which is drinking all the fuel up. Skoda claims that it gives a mileage of 13.32kmpl but in the real world it gives around 5-6 kmpl if you drive on efficiency and calmly. In the city it gives around 5-6 kmpl but out on the open highways it gives a good 11-12 kmpl on a full tank. Overall, it is a fantastic car but if you drive a lot in the city and you're running a lot a diesel car would be better for your pockets as it is not going to be drinking this much fuel. "
+            },
+            {
+                title: "Review on the BMW X430d(Diesel)",
+                date: "January 11, 2025",
+                content: "BMW, which is the world's leading company in sports cars, luxury cars and SUV’s. BMW is unique for their mixture of performance and luxury at the same time. The BMW X4 is exactly one of them where it offers good space, good luxury and last but not least excellent performance. It is powered by a 3.0 litre inline 6 which produces 320 bhp and 600 nm of torque. It is a coupe which gives it its looks. It is a little bit on the sporty side but it is also fuel efficient and is a great daily driver. BMW claims it gives a mileage of 14.24kmpl which in the real life world it gives around 10-11 in the city and out on the highway it gives around 13-14 which is fantastic for a car of that shape and size. Overall, it is a good, safe and fuel efficient car which offers fun and is also pocket friendly for you when it comes to refueling"
+            }
+
+            
+      
+        ];
+
+        // Display blog posts
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogContainer = document.getElementById('blogPosts');
+            
+            blogPosts.forEach(post => {
+                const blogCard = document.createElement('div');
+                blogCard.classList.add('card', 'mb-4');
+                blogCard.innerHTML = `
+                    <div class="card-header">
+                        <h2>${post.title}</h2>
+                        <small class="text-muted">${post.date}</small>
+                    </div>
+                    <div class="card-body">
+                        <p style="white-space: pre-line;">${post.content}</p>
+                    </div>
+                `;
+                blogContainer.appendChild(blogCard);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
